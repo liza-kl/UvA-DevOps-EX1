@@ -13,11 +13,10 @@ jobs:
       with:
         context: .
         file: ./python-flask-server-generated/Dockerfile
-      run: |
-        docker build . -t ${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}
     - name: Run docker
       working-directory: ./python-flask-server-generated
       run: |
+        docker build . -t ${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}
         docker run -d -p 8080:8080 -h 172.17.0.2 ${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:latest && \
           docker ps && sleep 5
     - name: Run API Tests
@@ -40,4 +39,4 @@ jobs:
 
     - name: Push image to docker hub Container Registry
       run: | 
-          docker push ${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}
+          docker push
