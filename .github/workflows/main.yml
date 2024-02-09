@@ -11,8 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build docker
       run: |
-        cd  ./python-flask-server-generated \
-        docker build . -t ${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }} ./Dockerfile
+        docker build . -t ${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }} ./python-flask-server-generated/Dockerfile
     - name: Run docker
       working-directory: ./python-flask-server-generated
       run: |
