@@ -10,6 +10,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build docker
+      with:
+        context: .
+        file: ./python-flask-server-generated/Dockerfile
       run: |
         docker build . -t ${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}
     - name: Run docker
