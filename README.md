@@ -18,5 +18,8 @@ tinydb == 4.8.0
 5. python3 `__main__.py`
 6. Open the project `README.md` there is the correct URL to access the UI
 
+- Dockerfile was also adjusted according to the 2nd step
+
 - For the Docker had to adjust the `workflows/main.yml`, in order to make it running
 with the current folder structure. 
+
